@@ -1,0 +1,3 @@
+/home/jera1470/CLionProjects/baddies/cmake-build-debug/CMakeFiles/baddies.dir
+/home/jera1470/CLionProjects/baddies/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/jera1470/CLionProjects/baddies/cmake-build-debug/CMakeFiles/rebuild_cache.dir
