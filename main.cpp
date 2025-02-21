@@ -10,7 +10,7 @@ Author: Jeremy Caceres
 #include <string>
 #include <ctime>
 
-using namespace std;
+using std::string, std::cout, std::endl, std::cin;
 
 #include "gameboard.h"
 
@@ -23,7 +23,12 @@ char getHeroNextMove() {
 }
 
 int main( ) {
-	
+    // Clear the terminal
+    #ifdef _WIN32
+        system("cls"); // For Windows
+    #else
+        system("clear"); // For Linux and macOS
+    #endif
     int numrows = 0; //15
     int numcols = 0; //40
     while (numrows < 10 || numrows > 30) {

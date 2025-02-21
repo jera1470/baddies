@@ -1,8 +1,6 @@
 /*-------------------------------------------
-Program 7: Outrun or Outlast the Baddies
-Course: CS 211, Fall 2023, UIC
-System: Advanced zyLab
 Author: Jeremy Caceres
+Fall 2023, UIC
 ------------------------------------------- */
 #pragma once
 
@@ -11,7 +9,7 @@ Author: Jeremy Caceres
 #include <stdexcept>
 #include <algorithm>
 
-using namespace std;
+using std::out_of_range;
 
 template<typename T>
 class Grid {

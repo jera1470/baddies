@@ -1,13 +1,9 @@
 /*-------------------------------------------
-Program 7: Outrun or Outlast the Baddies
-Course: CS 211, Fall 2023, UIC
-System: Advanced zyLab
 Author: Jeremy Caceres
+Fall 2023, UIC
 ------------------------------------------- */
-#ifndef _BOARDCELL_H
-#define _BOARDCELL_H
-
-using namespace std;
+#ifndef BOARDCELL_H
+#define BOARDCELL_H
 
 class BoardCell {
 
@@ -288,4 +284,4 @@ public:
 }; // EscapeLadder
 
 
-#endif //_BOARDCELL_H
+#endif //BOARDCELL_H

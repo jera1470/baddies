@@ -1,8 +1,6 @@
 /*-------------------------------------------
-Program 7: Outrun or Outlast the Baddies
-Course: CS 211, Fall 2023, UIC
-System: Advanced zyLab
 Author: Jeremy Caceres
+Fall 2023, UIC
 ------------------------------------------- */
 #ifndef GAMEBOARD_H
 #define GAMEBOARD_H
@@ -14,15 +12,15 @@ Author: Jeremy Caceres
 #include "boardcell.h"
 #include "grid.h"
 
-using namespace std;
+using std::runtime_error;
 
 class GameBoard {
 	private: 
 	    Grid<BoardCell*> board;
         size_t numRows;
         size_t numCols;
-        size_t HeroRow;
-	    size_t HeroCol;
+        int HeroRow;
+	    int HeroCol;
         size_t numMonsters;
         size_t numSuperMonsters;
         size_t numAbysses;
@@ -148,7 +146,7 @@ class GameBoard {
                 board(r,c) = new Wall(r,c);
             }
 
-            for (int i = 0; i < numMonsters; ++i) {
+            for (size_t i = 0; i < numMonsters; ++i) {
                 r = rand() % numRows;
                 c = 3 + (rand() % sizeMid);
                 while (board(r,c)->display() != ' ') {
@@ -160,7 +158,7 @@ class GameBoard {
                 board(r,c)->setPower(1);        
             }
 
-            for (int i = 0; i < numSuperMonsters; ++i) {
+            for (size_t i = 0; i < numSuperMonsters; ++i) {
                 r = rand() % numRows;
                 c = 3 + (rand() % sizeMid);
                 while (board(r,c)->display() != ' ') {
@@ -172,7 +170,7 @@ class GameBoard {
                 board(r,c)->setPower(2);               
             }
 
-            for (int i = 0; i < numBats; ++i) {
+            for (size_t i = 0; i < numBats; ++i) {
                 r = rand() % numRows;
                 c = 3 + (rand() % sizeMid);
                 while (board(r,c)->display() != ' ') {
@@ -183,7 +181,7 @@ class GameBoard {
                 board(r,c) = new Bat(r,c); 
             }
 
-            for (int i = 0; i < numAbysses; ++i) {
+            for (size_t i = 0; i < numAbysses; ++i) {
                 r = rand() % numRows;
                 c = 3 + (rand() % sizeMid);
                 while (board(r,c)->display() != ' ') {
@@ -301,8 +299,8 @@ class GameBoard {
         //---------------------------------------------------------------------------------
         void findHero() {
             // Search board for Hero
-            for (int r = 0; r < getNumRows(); r++) {
-                for (int c = 0; c < getNumCols(); c++) {
+            for (size_t r = 0; r < getNumRows(); r++) {
+                for (size_t c = 0; c < getNumCols(); c++) {
                     // Check if current cell contains the Hero
                     if (board(r,c)->display() == 'H') {
                         // Found Hero, update position
@@ -343,8 +341,8 @@ class GameBoard {
         //
         bool makeMoves(char HeroNextMove) {
             // Loop through all cells on the board to check if baddie has moved, and makes it false if so
-            for (int row = 0; row < getNumRows(); row++) {
-                for (int col = 0; col < getNumCols(); col++) {
+            for (size_t row = 0; row < getNumRows(); row++) {
+                for (size_t col = 0; col < getNumCols(); col++) {
                     if (board(row, col)->isBaddie()) {
                         board(row, col)->setMoved(false);
                     }
