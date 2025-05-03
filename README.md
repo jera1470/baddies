@@ -10,7 +10,7 @@ For Windows users:
 
 Install the correct binary executable for your machine on the [Releases](https://github.com/jera1470/baddies/releases/tag/baddies_v0.1) page.
 
-For Linux and macOS users:
+For Linux users:
 
 Install the executable from the [Releases](https://github.com/jera1470/baddies/releases/tag/baddies_v0.1) page and run in on your terminal:
 
